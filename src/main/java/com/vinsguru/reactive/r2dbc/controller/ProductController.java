@@ -18,6 +18,8 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+
+
     @GetMapping("all")
     public Mono<Page<Product>> getAll(
             @RequestParam("page") int page,
@@ -25,5 +27,13 @@ public class ProductController {
         return this.productService.getProducts(
                 PageRequest.of(page, size));
     }
+
+//    @GetMapping("all")
+//    public Mono<Page<Product>> getAll(
+//            @RequestParam("page") int page,
+//            @RequestParam("size") int size){
+//        return this.productService.getProducts(
+//                PageRequest.of(page, size));
+//    }
 
 }
